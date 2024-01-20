@@ -53,3 +53,53 @@ let ArraysManipulacao = function(){
     console.log(RemoveAlg);
     console.log(creaFunc);
 }
+let ObjetosManipulacao = function(){
+    var pessoa = { temCasa: true }
+    //funcao para mostrar todas as informações dos engenheiros
+    let informacoes = function(){ console.log(`${this.nome}  ${this.sobrenome} + idade ${this.idade} anos - ${this.nacionalidade}`)};
+    var engenheiros = [
+        {
+            nome: 'Joberto',
+            sobrenome: 'Fani',
+            idade: 39,
+            nacionalidade: 'India',
+            informacoes: informacoes //aqui só atribui que a propriedade informacoes irá conter o metodo
+        },
+        {
+            nome: 'Jonas',
+            sobrenome: 'Soares',
+            idade: 24,
+            nacionalidade: 'Tainlândia',
+            informacoes: informacoes
+        },
+        {
+            nome: 'João',
+            sobrenome: 'Victor',
+            idade: 13,
+            nacionalidade: 'França',
+            informacoes: informacoes
+        }
+    ];
+    
+    for (let i = 0; i < engenheiros.length; i++) {
+        // aqui chama a função para executar
+        engenheiros[i].informacoes();
+    }
+    
+    //acessando o array e a propriedade e modificando
+     engenheiros[2].nome = 'Sergio'
+
+    //for in - mostrando tudo oq tem no obj
+    console.log('\n')
+    for(let i in engenheiros ){
+        console.log(i, engenheiros[i]);
+    } 
+
+    console.log('\n')
+    //analisando se tem a propriedade no objeto
+    if( 'nome' in engenheiros[1] ){
+        console.log('tem')
+    }else{
+        console.log('não possui')
+    }
+}
