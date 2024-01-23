@@ -103,3 +103,177 @@ let ObjetosManipulacao = function(){
         console.log('não possui')
     }
 }
+let funcoes = function(){ 
+    //Declarações de Funções
+     function FuncoesNomeadas(){
+       //essas funções podem ser declaradas antes/depois da escrita da função
+       console.log("Funções nomeadas:" + '\n' + nomeDaFuncao() + '\n' + antesDeDeclarar());
+       function nomeDaFuncao(){
+         var mensagem = 'Hello World';
+         return mensagem;
+       }
+       function antesDeDeclarar(){
+         var mensagem = 'vamo ver se funciona e se tem a ver com o let e var ';
+         let mensagem2 = 'andei sem rumo por ai'
+         return mensagem + mensagem2;
+       }
+     }
+     function ExpressaoDeFuncoes(){
+       console.log("Expressão de Funções:")
+   
+       var funcao = function(){
+         return 'amendoim';
+       }
+       console.log(funcao) // retorna o codigo da função
+       console.log(funcao()) //retorna o que a função retorna
+   
+       // * quando uma variavel recebe uma função ela se torna uma função? SIM
+       var mago = ()=>console.log('vingardio leviosa');
+       mago();
+    }
+   
+     // --- Expressão de função invocada imediatamente (IIFE) ---
+     // -- Ela auto se chama - init()
+     (
+       function inicializador(){
+         //alert('Hello World');
+         PintarBackGround()
+       }
+     )();
+   
+     function PintarBackGround (){
+       var body = document.getElementById('tudo')
+       body.innerHTML += '✨'
+     }
+     FuncoesNomeadas();
+     console.log('\n');
+     ExpressaoDeFuncoes();
+}
+let fors = function(){
+  var arrayEstados = ['MG', 'RJ', 'SP', 'GO', 'BA', 'SE', 'TO', 'AM']
+
+  console.log('-----------------FOR-------------------');
+  //FOR tradicional -> Para iterar sobre uma sequência conhecida de números. For (inicialização; condição; iteração) { ... }
+  var inicio = 0;
+  var condicao = arrayEstados.length;
+  for(let i = inicio; i < condicao; i++){
+    console.log('Estados: ' + arrayEstados[i])
+  }
+
+  console.log('-----------------FOREACH---------------------');
+  //FOREACH -> Para executar uma função para cada elemento de um array. array.forEach(function(elemento) { ... })
+  arrayEstados.forEach(estados => {console.log("estados: " +estados)});
+
+  console.log('-----------------FOR OF----------------------');
+  //FOR OF -> Para iterar sobre valores de coleções iteráveis (arrays, strings, etc.).  for (variavel of iteravel) { ... }
+  for(let estados of arrayEstados){
+    console.log('estados novamente: '+ estados)
+  }
+
+  console.log('-----------------FOR IN---------------------');
+  //FOR IN -> para iterar objetos. for (variavel in objeto) { ... }
+  var obj = {pais: 'Alemanha', capital: 'Berlim' };
+  for(let p in obj){
+    console.log(p +': ' + obj[p])
+  }
+}
+fors()
+funcoes()
+   
+//AJAX
+//Consumir apo
+//POO
+//
+   //IIFE
+   
+   /*var result = (
+     function(){
+       var fruta = 'jabuticaba';
+       return fruta;
+     }
+   )();
+   result;
+   
+   (
+     function () {
+       var abacaxi = 'y';
+       console.log(abacaxi)
+       return abacaxi;
+   })();
+   abacaxi;
+   
+   var result = (function() {
+     var nome = "Matheus";
+     return nome;
+   })();
+   alert(result)
+   
+   ArraysManipulacao()
+   
+   
+   //transformou a string em array de acordo com os espaços
+   var arrayString = string.slipt(' ');
+   let inverso = '';
+   
+   //fazendo um loop no arrayString para fazer a validacao
+   for(var i = 0; i < arrayString.length; i++){
+     //validando para pegar as palavras maiores q 5
+      if(arrayString[i].length > 5 ){
+        for(j of arrayString){
+          //inverter as palavras
+          inverso = j + inverso;
+        }
+      }
+   }
+   
+   function spinWords(string){
+     var arrayString = string.slipt(' ');
+     var inverso = "";
+     var novoArray = arrayString.map((r)=>{
+       if(r.length > 5){
+         for(j of arrayString){
+           inverso = j + inverso
+         }
+       }
+     }) 
+     var stringAgain = novoArray.toString();
+     return stringAgain;
+   }
+   https://www.codewars.com/kata/5264d2b162488dc400000001/train/javascript
+   function spinWords(str){
+     var arrayString = str.slipt(' ');
+     
+     let tamanho = arrayString.length;
+   
+     //fazendo um loop no arrayString para fazer a validacao
+     for(var i = 0; i < tamanho; i++){
+       // lendo cada palavra
+       var palavra = arrayString[i];
+       
+       //validando para pegar as palavras maiores q 5
+        if(palavra.length > 5 ) {
+          for(var j = palavra.length - 1; j == 0; j--) {
+            
+          }
+        }
+     }
+   }
+   */
+   
+   function sim(str){
+     var quantidade = str.length;
+     var imparOuPar;
+     var calculo = quantidade % 2 == 0;
+     if(calculo != 0){
+       imparOuPar = false;
+       
+       console.log('impar')
+     } else{
+       imparOuPar = true;
+       console.log('par')
+     }
+     
+     console.log('quantidade:'+ quantidade);
+     console.log('-- ' + imparOuPar);
+   }
+   
